@@ -24,6 +24,7 @@ describe Grizzly::Client do
     VCR.use_cassette('friends') do
       client = Grizzly::Client.new(access_token)
       friends = client.friends(user_id)
+      friends.count.should eql 9
     end
   end
 

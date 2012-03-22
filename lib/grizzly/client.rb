@@ -6,7 +6,11 @@ module Grizzly
     end
 
     def friends(user_id)
-      perfrom_request(:get, '/friendships/friends', {:access_token => @access_token, :uid => user_id})
+      response = perfrom_request(:get, '/friendships/friends', {:access_token => @access_token, :uid => user_id})
+      users = []
+      response["users"].each do |user|
+        users << Grizzly::User.build_from_hash user
+      end
     end
 
     private

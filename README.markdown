@@ -15,7 +15,7 @@ client = Grizzly::Client.new(access_token)
 
 ### Friends
 You can access a list of friends by supplying a weibo user id
+
 ```ruby
-...
-client.friends(user_id)
+friends = client.friends(user_id)
 ```
