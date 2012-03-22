@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.weibo.com/2/friendships/friends.json?access_token=2.004aXKtCl9RjUB3de807432a9ftj4C
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Thu, 22 Mar 2012 03:50:10 GMT
+      Server:
+      - PWS/1.7.3.9
+      X-Px:
+      - nc h0-s1007.p0-syd ( pek-ag6-n9), nc pek-ag6-n9 ( origin)
+      Content-Length:
+      - '114'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Encoding:
+      - gzip
+      Vary:
+      - Accept-Encoding
+      Age:
+      - '0'
+      Via:
+      - 1.1 varnish
+      Api-Server-Ip:
+      - 10.75.24.201
+      X-Varnish:
+      - '2331115835'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAADSMQQqAIBAAv7LsWcw6hZ8J0ZUMdGu3TtHfi6LbDAxzIomw
+        oMc1SKjwmgElgsQRMgtUFoLSMls0Xz1FToS+d86NBoW2g3R/Ft3QZSnUks5l
+        1Z/totzwugUAAAD//wIMALCSC2pqAAAA
+    http_version: !!null 
+  recorded_at: Thu, 22 Mar 2012 03:50:10 GMT
+recorded_with: VCR 2.0.0
