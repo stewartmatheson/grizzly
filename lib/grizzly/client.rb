@@ -5,8 +5,8 @@ module Grizzly
       @access_token = access_token
     end
 
-    def friends
-      perfrom_request(:get, '/friendships/friends.json', {:access_token => @access_token})
+    def friends(user_id)
+      perfrom_request(:get, '/friendships/friends', {:access_token => @access_token, :uid => user_id})
     end
 
     private

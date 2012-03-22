@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.weibo.com/2/friendships/friends.json?access_token=2.004aXKtCl9RjUB3de807432a9ftj4C
+    uri: https://api.weibo.com/2/friendships/friends.json?access_token=2.004aXKtCl9RjUB3de807432a9ftj4C&uid=2647476531
     body:
       encoding: US-ASCII
       string: ''
@@ -15,17 +15,17 @@ http_interactions:
       - Ruby
   response:
     status:
-      code: 400
-      message: Bad Request
+      code: 200
+      message: OK
     headers:
       Date:
-      - Thu, 22 Mar 2012 03:24:49 GMT
+      - Thu, 22 Mar 2012 04:20:18 GMT
       Server:
       - PWS/1.7.3.9
       X-Px:
-      - nc syd-agg-n7 ( pek-ag6-n9), nc pek-ag6-n9 ( origin)
+      - nc syd-agg-n6 ( pek-ag6-n6), nc pek-ag6-n6 ( origin)
       Content-Length:
-      - '114'
+      - '2206'
       Content-Type:
       - application/json;charset=UTF-8
       Content-Encoding:
@@ -37,17 +37,64 @@ http_interactions:
       Via:
       - 1.1 varnish
       Api-Server-Ip:
-      - 10.75.0.174
+      - 10.75.0.170
       X-Varnish:
-      - '3513732612'
+      - '1652574707'
       Connection:
       - keep-alive
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAADSMQQqAIBAAv7LsWcw6hZ8J0ZUMdGu3TtHfi6LbDAxzIomw
-        oMc1SKjwmgElgsQRMgtUFoLSMls0Xz1FToS+d86NBoW2g3R/Ft3QZSnUks5l
-        1Z/totzwugUAAAD//wIMALCSC2pqAAAA
+        H4sIAAAAAAAAANSZa1PbVhrHv4rrV7vdBI6O7rxq32RmOzt908zO7GxbjzAC
+        1NgSETaXdtoBUsIllEvKPWTThJCk5RJTQgDbwIeJj2S94ivscywjS5bMpd7d
+        WWYU4vPoSNY5z/M7//+Rv4tne1WzN972z+/iWke8jcEsEgQWiegWtHszZrwt
+        XovFb8V7k6aq6gldSatwiszPks11CNe3e0yjT9OTNMYy0E5qmUF6K4ToTVJG
+        Uslohg6R0uGktX8AsQ4Vbq31VMMpo0/NaJ2dij6YUfSuTzqNgbSipVqSRjpm
+        7y3C0XL3r3fufPr5P1rgM3ny/MPQiP3glTVctNaGSG6GTC3+QE43S0eztP3y
+        NW1/VH41TIZX3cvdgxSHyOkD+PDDR9b2evnBsTM2Y6/+aD2bdV4sQdj409eJ
+        r/9swONlzRQ8Vncm09PW2tqeMrpaejVdoc/TktRb6TMOKro78E4tpSa0tNKl
+        JgJXZXrYykVauoteU5vWVh4OAfGYlxDHtCLfbdwb1G7fYcA06IFQv6p1KwaE
+        4HOXqneoNGed0Og0UimjH7KbSBpZPRNvExlJFDAHZ0wNOnpxRpYhsRklA7VQ
+        C8KzQE+lz8iaWsYX50Qe8mmqSkbtSCgQid8xtdin2a4YlmIItVWO2F+QBH8x
+        QrL3JJreFW/LmFn1Vlyh7QT8TSjJTCLdCyc6lVSvSkdgJFRdaU+pHeed+1RT
+        69TC7URmsAcKDCrVVNOKec+dAnccCVrMLId5mZMZxHECj0XO/72QuLRKx1N9
+        oD4lo5iJlGJ2qVfJGMxOfcq8x4Kp6a0UsVWcJ3PLZ8WpD0OTzvp0KT+HPww9
+        cjZy1sYqHO6JUmGFTMyx7gn73WZ5dtebsQSFqjoxhp7SdDXhDq8y6nYtEUox
+        w0qAl0JnOv5t9+2kHv/+VpVsRsY8w8uCn2wvFiLbejpNHubgqMHtD/n4Zi7k
+        m0wtlfJbIb4vJSqltUO90H+XQcUEUuSNqAoVZEySZCECqsA3eFwFoldHi2FZ
+        XkQMCrGFBSbMFpbZSLZY/n+GVjXWFFsilngYs4iwgP8AW40SV2XLn7kL2LKe
+        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
+        AA==
     http_version: !!null 
-  recorded_at: Thu, 22 Mar 2012 03:24:50 GMT
+  recorded_at: Thu, 22 Mar 2012 04:20:19 GMT
 recorded_with: VCR 2.0.0
