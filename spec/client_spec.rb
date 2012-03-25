@@ -28,4 +28,14 @@ describe Grizzly::Client do
     end
   end
 
+  it "should make the user data accessable via methods" do
+    VCR.use_cassette('friends') do
+      client = Grizzly::Client.new(access_token)
+      friends = client.friends(user_id)
+      friends.first.id
+      -> { friends.first.icecream }.should raise_error
+    end
+  end
+
+
 end

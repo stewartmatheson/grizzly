@@ -12,7 +12,7 @@ module Grizzly
     def initialize(method, url, options)
       connection = Faraday.new(:url => BASE_URI) do |builder|
         builder.use Faraday::Adapter::NetHttp
-        builder.use FaradayStack::ResponseJSON,     content_type: 'application/json'
+        builder.use FaradayStack::ResponseJSON, content_type: 'application/json'
         builder.use Faraday::Request::UrlEncoded
       end
 
