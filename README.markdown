@@ -19,3 +19,11 @@ You can access a list of friends by supplying a weibo user id
 ```ruby
 friends = client.friends(user_id)
 ```
+
+This method will return an array of user friend objects. Data of these objects can be accessed via methods
+
+```ruby
+friends.first.id            #=> "1233344545356356"
+friends.first.screen-name   #=> "Fred Chang"
+friends.first.gender        #=> "m"
+```
