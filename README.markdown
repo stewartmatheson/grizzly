@@ -24,6 +24,6 @@ This method will return an array of user friend objects. Data of these objects c
 
 ```ruby
 friends.first.id            #=> "1233344545356356"
-friends.first.screen-name   #=> "Fred Chang"
+friends.first.screen_name   #=> "Fred Chang"
 friends.first.gender        #=> "m"
 ```
