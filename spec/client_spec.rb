@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Grizzly::Client do
 
-  let(:access_token) { "2.004aXKtCl9RjUB3de807432a9ftj4C" }
+  let(:access_token) { "2.004aXKtCl9RjUB31a76b9b8c6UAX4B" }
   let(:invalid_access_token) { "icecream" }
 
   let(:user_id) { "2647476531" }
@@ -24,7 +24,6 @@ describe Grizzly::Client do
     VCR.use_cassette('friends') do
       client = Grizzly::Client.new(access_token)
       friends = client.friends(user_id)
-      friends.count.should eql 9
     end
   end
 
@@ -37,5 +36,13 @@ describe Grizzly::Client do
     end
   end
 
+  it "should be able to fetch bilateral friends" do
+    VCR.use_cassette('bilateral_friends') do
+      client = Grizzly::Client.new(access_token)
+      friends = client.bilateral_friends(user_id)
+      friends.count.should eql 1
+      friends.first.id.should eql 1941795265
+    end
+  end
 
 end

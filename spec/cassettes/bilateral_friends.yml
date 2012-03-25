@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.weibo.com/2/friendships/friends/bilateral.json?access_token=2.004aXKtCl9RjUB31a76b9b8c6UAX4B&uid=2647476531
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 25 Mar 2012 21:32:07 GMT
+      Server:
+      - PWS/1.7.3.9
+      X-Px:
+      - nc h0-s1007.p0-syd ( pek-ag6-n6), nc pek-ag6-n6 ( origin)
+      Content-Length:
+      - '633'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Encoding:
+      - gzip
+      Vary:
+      - Accept-Encoding
+      Age:
+      - '0'
+      Via:
+      - 1.1 varnish
+      Api-Server-Ip:
+      - 10.75.0.173
+      X-Varnish:
+      - '2037486608'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAIxTTW/TQBD9K9ZeSWs7X02sUnFGcKLiQtFq4ozjlda70e46
+        IVS5c+HaQ8+VEBwQEqqQOPTXkPwOZu04TmgPKJG182bsmX3vzTUrLRrLknfX
+        TExZEo/78dl40B0OOhRbZ1jCWox1mE0NouIKCqTUW5G+An15SYnHyNzohVCp
+        R/tRREAq3IqCMzpKnYITWlG4vf+1ubsJtg8/N3dfNp++/vl9SwVTpE5ivqsh
+        oDSyPtBnMyGRiwJmyGs4d26ehKGbd0+tUCCK2WmqwnbwcBCF9Dt4u36vDI8u
+        N9UFiF2/JYocdH2eoZqipyKjINNS6iWRxlNdKseSHmFGUMkhYh04onYPxURo
+        BgtdGuFaNCJSDILDKQcK2ZtSBS9BBb0oiKKk+gfPohE9u1Ec75sLNWNJBtJi
+        h4EHOD05pI4Xts3MUHNUMJFIwjpTErRAIzLh411NA3C3mpNQJ3EzOUuuj0e7
+        LDF4DSaIhkEc03WS/qgdrcs6lX16/W406I3H48Eojodnww4rPMz+xVnrridS
+        Dj/4ji+swyUYV4DL0WoV5LjyDiQOK1OdQ5AbzJ5fNfKTZBN9muriigUGJSWU
+        rgm7Yhfbmx/b+2+bh++bz7fnIVywWg8vR0sHsaRSOESE4gbncsWd5jUzvLoR
+        O075LXoycbwvlZfIVKqUssOoSFt3ZAZdFKiOoELiAmV1XAgrSE0vTS0XYVJY
+        VzWO1utDM+y+1AgPC3BguAQzw//Zl3jULMzeIWQG2yxjzSr3d9rxpJUUCnlj
+        HppsIvijVfEDgzcv+5ifpIqt3xPn2oHkqiwmfsXi9V8AAAD//wIMAGIoiN+T
+        BAAA
+    http_version: !!null 
+  recorded_at: Sun, 25 Mar 2012 21:32:07 GMT
+recorded_with: VCR 2.0.0
