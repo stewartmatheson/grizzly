@@ -8,6 +8,8 @@ module Grizzly
     API_VERISON = 2
     BASE_URI = "https://api.weibo.com"
     FORMAT = "json"
+    TIMEOUT = 5
+    OPEN_TIMEOUT = 2
 
     def initialize(method, url, options)
       connection = Faraday.new(:url => BASE_URI) do |builder|
@@ -16,7 +18,12 @@ module Grizzly
         builder.use Faraday::Request::UrlEncoded
       end
 
-      @response = connection.get("/#{API_VERISON}#{url}.#{FORMAT}") do |request|
+      @response = connection.send(method, "/#{API_VERISON}#{url}.#{FORMAT}") do |request|
+        request.options = {
+          :timeout      => TIMEOUT,
+          :open_timeout => OPEN_TIMEOUT
+        } 
+
         options.each do |key, value|
           request.params[key] = value
         end
@@ -37,5 +44,6 @@ module Grizzly
       end
       payload
     end
+
   end
 end
