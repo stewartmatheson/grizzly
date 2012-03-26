@@ -45,4 +45,13 @@ describe Grizzly::Client do
     end
   end
 
+  it "should get a hash version of the returned user data" do
+    VCR.use_cassette('bilateral_friends') do
+      client = Grizzly::Client.new(access_token)
+      friends = client.bilateral_friends(user_id)
+      friends.first.to_h.class.should eql Hash
+      friends.first.to_h["id"].should eql 1941795265
+    end
+  end
+
 end

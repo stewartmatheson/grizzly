@@ -13,5 +13,9 @@ module Grizzly
       end 
     end
 
+    def to_h
+      @data
+    end
+
   end
 end
