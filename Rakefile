@@ -22,5 +22,6 @@ end
  
 desc "Release to ruby gems"
 task :release => :build do
-  system "gem push grizzly-#{Grizzly::VERSION}.gem"
+  system "gem push grizzly-weibo-#{Grizzly::VERSION}.gem"
+  system "rm grizzly-weibo-#{Grizzly::VERSION}.gem"
 end
