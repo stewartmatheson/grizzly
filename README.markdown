@@ -37,6 +37,12 @@ friends.first.screen_name   #=> "Fred Chang"
 friends.first.gender        #=> "m"
 ```
 
+You can convert a user object to a hash if you need to however use . syntax where you can. Makes the code look cleaner
+
+```ruby
+friends.first.to_h["screen_name"] #=> "Fred Chang"
+```
+
 ### Friends (Bilateral) 
 Returns a list of your bilateral friends on Weibo. This list has users who are a fan of you and your are a fan of.
 
