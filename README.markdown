@@ -4,6 +4,14 @@ Grizzly
 ### About
 Grizzly is a simple API wrapper around the Weibo API V2. The name comes form the awesome Koala gem for facebook.
 
+### Installation
+Grizzly as a name was already taken on ruby gems. Awww. However grizzly-weibo was not. To install using bundler
+add the following to your gem file.
+
+```ruby
+gem "grizzly-weibo"
+```
+
 ### Usage
 To start using grizzly you want to create a client object. This client object allows you to interact with weibo api.
 This can be done creating a new object of type ```Grizzly::Client```. You will need an access token 
