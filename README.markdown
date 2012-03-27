@@ -70,7 +70,7 @@ generated.
 
 ```ruby
 friends = client.friends(user_id)
-unless friends.next_page? #Loops untill end of collection
+while friends.next_page? #Loops untill end of collection
   friends.next_page do |friend|
     ... # Loops 50 times
   end
