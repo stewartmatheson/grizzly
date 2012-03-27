@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.weibo.com/2/friendships/friends/bilateral.json?access_token=2.004aXKtCl9RjUB31a76b9b8c6UAX4B&uid=2647476531
+    uri: https://api.weibo.com/2/friendships/friends/bilateral.json?access_token=2.004aXKtCl9RjUBfb2d4f0fbb0Y9nPt&count=50&page=1&uid=2647476531
     body:
       encoding: US-ASCII
       string: ''
@@ -19,11 +19,11 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 25 Mar 2012 21:32:07 GMT
+      - Tue, 27 Mar 2012 03:22:45 GMT
       Server:
       - PWS/1.7.3.9
       X-Px:
-      - nc h0-s1007.p0-syd ( pek-ag6-n6), nc pek-ag6-n6 ( origin)
+      - nc h0-s1007.p0-syd ( pek-ag6-n9), nc pek-ag6-n9 ( origin)
       Content-Length:
       - '633'
       Content-Type:
@@ -37,9 +37,9 @@ http_interactions:
       Via:
       - 1.1 varnish
       Api-Server-Ip:
-      - 10.75.0.173
+      - 10.75.24.204
       X-Varnish:
-      - '2037486608'
+      - '2856107509'
       Connection:
       - keep-alive
     body:
@@ -61,5 +61,5 @@ http_interactions:
         HppsIvijVfEDgzcv+5ifpIqt3xPn2oHkqiwmfsXi9V8AAAD//wIMAGIoiN+T
         BAAA
     http_version: !!null 
-  recorded_at: Sun, 25 Mar 2012 21:32:07 GMT
+  recorded_at: Tue, 27 Mar 2012 03:22:45 GMT
 recorded_with: VCR 2.0.0

@@ -51,3 +51,28 @@ friends = client.bilateral_friends(user_id)
 ```
 
 This method returns the same friend object that ```client.friends``` returns.
+
+### Cursors
+Weibo API supports paging. Both the ```friends``` and ```bilateral_friends``` are paginated. This means that when we
+call these methods we have a cursor object returned. This cursor object can be iterated over. Iterating in this way will
+only iterate over the first 50 results
+
+```ruby
+friends = client.friends(user_id)
+friends.each do |friend|
+  ...
+end
+```
+
+For something a little more robust we can iterate over pages as well. This will get all of a users friends iterating
+over them in blocks of fifties. Note that each time you access friends.next_page an new request to the weibo api will be
+generated.
+
+```ruby
+friends = client.friends(user_id)
+unless friends.next_page? #Loops untill end of collection
+  friends.next_page do |friend|
+    ... # Loops 50 times
+  end
+end
+```

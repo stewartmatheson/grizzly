@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Grizzly::Client do
 
-  let(:access_token) { "2.004aXKtCl9RjUB31a76b9b8c6UAX4B" }
+  let(:access_token) { "2.004aXKtCl9RjUBfb2d4f0fbb0Y9nPt" }
   let(:invalid_access_token) { "icecream" }
 
   let(:user_id) { "2647476531" }

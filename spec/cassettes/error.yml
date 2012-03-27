@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.weibo.com/2/friendships/friends.json?access_token=icecream&uid=2647476531
+    uri: https://api.weibo.com/2/friendships/friends.json?access_token=icecream&count=50&page=1&uid=2647476531
     body:
       encoding: US-ASCII
       string: ''
@@ -19,11 +19,11 @@ http_interactions:
       message: Forbidden
     headers:
       Date:
-      - Sun, 25 Mar 2012 21:32:06 GMT
+      - Tue, 27 Mar 2012 03:14:28 GMT
       Server:
       - PWS/1.7.3.9
       X-Px:
-      - nc h0-s1007.p0-syd ( pek-ag6-n2), nc pek-ag6-n2 ( origin)
+      - nc syd-agg-n6 ( pek-ag6-n2), nc pek-ag6-n2 ( origin)
       Content-Length:
       - '107'
       Content-Type:
@@ -37,9 +37,9 @@ http_interactions:
       Via:
       - 1.1 varnish
       Api-Server-Ip:
-      - 10.75.0.171
+      - 10.75.0.172
       X-Varnish:
-      - '2720972448'
+      - '2804319912'
       Connection:
       - keep-alive
     body:
@@ -49,5 +49,5 @@ http_interactions:
         hQGIz7xSTbkUNEtNFmRwH6ciFWEIfYzBgeJ+oLX38cGPSsjVJtrs7242Ybgf
         AQAAAP//AgwAFkpSd1sAAAA=
     http_version: !!null 
-  recorded_at: Sun, 25 Mar 2012 21:32:06 GMT
+  recorded_at: Tue, 27 Mar 2012 03:14:28 GMT
 recorded_with: VCR 2.0.0

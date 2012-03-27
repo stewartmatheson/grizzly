@@ -1,5 +1,7 @@
 module Grizzly
   class User
+    
+    API_COLLECTION_NAME = "users"
 
     def initialize(user_data)
       @data = user_data

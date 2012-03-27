@@ -6,28 +6,11 @@ module Grizzly
     end
     
     def friends(user_id)
-      response = perfrom_request(:get, '/friendships/friends', {:access_token => @access_token, :uid => user_id})
-      users = []
-      response["users"].each do |user|
-        users << Grizzly::User.new(user)
-      end
-      users
+      Grizzly::Cursor.new(Grizzly::User, "/friendships/friends", {:access_token => @access_token, :uid => user_id})
     end
 
     def bilateral_friends(user_id)
-      response = perfrom_request(:get, '/friendships/friends/bilateral', {:access_token => @access_token, :uid => user_id})
-      users = []
-      response["users"].each do |user|
-        users << Grizzly::User.new(user)
-      end
-      users
-    end
-
-    private
-
-    def perfrom_request(method, url, options)
-      request = Grizzly::Request.new(method, url, options)
-      request.response
+      Grizzly::Cursor.new(Grizzly::User, "/friendships/friends/bilateral", {:access_token => @access_token, :uid => user_id})
     end
   end
 end
