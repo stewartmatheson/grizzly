@@ -22,6 +22,24 @@ using omniauth. There is already a working strategy for Weibo.
 client = Grizzly::Client.new(access_token)
 ```
 
+### Updating Status
+First things first. Lets update the users status. This only works after a user has been logged in and has an access token.
+
+```ruby
+client = Grizzly::Client.new(access_token)
+status = client.status_update("Dude. Weibo is awesome!")
+```
+
+Note that all method calls made with Grizzly will always return a domain object. More often than not this domain object
+is a representation of what ever JSON object has been returned by Weibo's API. In this case we get all sorts of handy
+information on the status we just updated including the user that the status belongs to. So you can do...
+
+```ruby
+status.user.id    #=> "1233344545356356"
+status.text       #=> "Dude. Weibo is awesome!"
+```
+
+
 ### Friends
 You can access a list of friends by supplying a weibo user id
 
