@@ -1,12 +1,15 @@
+# encoding: UTF-8
+
 require 'spec_helper'
 
 describe Grizzly::Client do
 
-  let(:access_token) { "2.004aXKtCl9RjUBfb2d4f0fbb0Y9nPt" }
+  let(:access_token) { "2.004aXKtCl9RjUBe463e4c6fc0CzrNu" }
   let(:invalid_access_token) { "icecream" }
+  let(:user_id) { 2647476531 }
+  let(:random_seed) { rand(10000000) } 
+  let(:status_update) { "Hello #{random_seed}" }
 
-  let(:user_id) { "2647476531" }
-  
   it "should expect to be passed an access token" do
     -> { Grizzly::Client.new }.should raise_error(Grizzly::Errors::NoAccessToken)
   end
@@ -54,4 +57,12 @@ describe Grizzly::Client do
     end
   end
 
+  it "should update the current users status" do
+    VCR.use_cassette('status_update') do
+      client = Grizzly::Client.new(access_token)
+      status = client.status_update(status_update)
+      status.text.should eql status_update
+      status.user.id.should eql user_id
+    end
+  end
 end

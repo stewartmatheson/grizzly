@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.weibo.com/2/statuses/update.json?access_token=2.004aXKtCl9RjUBe463e4c6fc0CzrNu
+    body:
+      encoding: US-ASCII
+      string: status=Hello%206664384
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 02 Apr 2012 02:52:47 GMT
+      Server:
+      - PWS/1.7.3.9
+      Transfer-Encoding:
+      - chunked
+      X-Px:
+      - nc syd-agg-n7 ( sha-agg-n1), nc sha-agg-n1 ( origin)
+      Content-Type:
+      - application/json;charset=UTF-8
+      Age:
+      - '0'
+      Via:
+      - 1.1 varnish
+      Vary:
+      - Accept-Encoding
+      Api-Server-Ip:
+      - 10.75.24.203
+      X-Varnish:
+      - '2717030665'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: ! '{"created_at":"Mon Apr 02 10:52:46 +0800 2012","id":3430318675892731,"mid":"3430318675892731","idstr":"3430318675892731","text":"Hello
+        6664384","source":"<a href=\"http://open.t.sina.com.cn\" rel=\"nofollow\">未通过审核应用</a>","favorited":false,"truncated":false,"in_reply_to_status_id":"","in_reply_to_user_id":"","in_reply_to_screen_name":"","geo":null,"user":{"id":2647476531,"idstr":"2647476531","screen_name":"stewartmatheson","name":"stewartmatheson","province":"400","city":"7","location":"海外
+        澳大利亚","description":"","url":"","profile_image_url":"http://tp4.sinaimg.cn/2647476531/50/0/1","profile_url":"u/2647476531","domain":"","weihao":"","gender":"m","followers_count":2,"friends_count":11,"statuses_count":9,"favourites_count":0,"created_at":"Mon
+        Mar 05 00:00:00 +0800 2012","following":false,"allow_all_act_msg":false,"geo_enabled":true,"verified":false,"verified_type":-1,"allow_all_comment":true,"avatar_large":"http://tp4.sinaimg.cn/2647476531/180/0/1","verified_reason":"","follow_me":false,"online_status":0,"bi_followers_count":0,"lang":"zh-cn"},"reposts_count":0,"comments_count":0,"mlevel":0,"visible":{"type":0,"list_id":0}}'
+    http_version: !!null 
+  recorded_at: Mon, 02 Apr 2012 02:52:47 GMT
+recorded_with: VCR 2.0.0

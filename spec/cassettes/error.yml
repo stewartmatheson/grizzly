@@ -7,6 +7,8 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -19,11 +21,11 @@ http_interactions:
       message: Forbidden
     headers:
       Date:
-      - Tue, 27 Mar 2012 03:14:28 GMT
+      - Mon, 02 Apr 2012 02:52:45 GMT
       Server:
       - PWS/1.7.3.9
       X-Px:
-      - nc syd-agg-n6 ( pek-ag6-n2), nc pek-ag6-n2 ( origin)
+      - nc syd-agg-n7 ( sha-agg-n2), nc sha-agg-n2 ( origin)
       Content-Length:
       - '107'
       Content-Type:
@@ -37,9 +39,9 @@ http_interactions:
       Via:
       - 1.1 varnish
       Api-Server-Ip:
-      - 10.75.0.172
+      - 10.75.24.204
       X-Varnish:
-      - '2804319912'
+      - '1089635578'
       Connection:
       - keep-alive
     body:
@@ -49,5 +51,5 @@ http_interactions:
         hQGIz7xSTbkUNEtNFmRwH6ciFWEIfYzBgeJ+oLX38cGPSsjVJtrs7242Ybgf
         AQAAAP//AgwAFkpSd1sAAAA=
     http_version: !!null 
-  recorded_at: Tue, 27 Mar 2012 03:14:28 GMT
+  recorded_at: Mon, 02 Apr 2012 02:52:45 GMT
 recorded_with: VCR 2.0.0

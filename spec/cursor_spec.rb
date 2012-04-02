@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Grizzly::Cursor do
-  let(:access_token) { "2.004aXKtCl9RjUBfb2d4f0fbb0Y9nPt" }
+  let(:access_token) { "2.004aXKtCl9RjUBe463e4c6fc0CzrNu" }
   let(:user_id) { "2647476531" }
   let(:popular_user_id) { "1087770692" }
 

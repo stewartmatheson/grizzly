@@ -1,6 +1,8 @@
+require 'grizzly/base'
 require 'grizzly/request'
 require 'grizzly/client'
 require 'grizzly/cursor'
+require 'grizzly/status'
 require 'grizzly/user'
 require 'grizzly/errors/no_access_token'
 require 'grizzly/errors/weibo_api'

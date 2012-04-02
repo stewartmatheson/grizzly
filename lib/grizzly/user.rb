@@ -1,23 +1,9 @@
 module Grizzly
-  class User
-    
+  class User < Grizzly::Base
     API_COLLECTION_NAME = "users"
 
-    def initialize(user_data)
-      @data = user_data
+    def initialize(data)
+      super(data)
     end
-
-    def method_missing(method_name, *attrs)
-      if @data.has_key?(method_name.to_s)
-        return @data[method_name.to_s] 
-      else
-        raise("Current User does not have #{method_name}")
-      end 
-    end
-
-    def to_h
-      @data
-    end
-
   end
 end

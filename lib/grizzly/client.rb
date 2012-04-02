@@ -12,5 +12,11 @@ module Grizzly
     def bilateral_friends(user_id)
       Grizzly::Cursor.new(Grizzly::User, "/friendships/friends/bilateral", {:access_token => @access_token, :uid => user_id})
     end
+
+    def status_update(status)
+      raise("Must set a status") unless !status.nil?
+      request = Grizzly::Request.new(:post, "/statuses/update", { :access_token => @access_token }, { :status => status } )
+      Grizzly::Status.new request.response 
+    end
   end
 end
