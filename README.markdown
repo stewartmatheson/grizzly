@@ -9,7 +9,7 @@ Grizzly as a name was already taken on ruby gems. Awww. However grizzly-weibo wa
 add the following to your gem file.
 
 ```ruby
-gem "grizzly-weibo"
+gem "grizzly-weibo", :require => "grizzly"
 ```
 
 ### Usage
