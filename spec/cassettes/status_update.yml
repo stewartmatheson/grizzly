@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.weibo.com/2/statuses/update.json?access_token=2.004aXKtCl9RjUBe463e4c6fc0CzrNu
+    uri: https://api.weibo.com/2/statuses/update.json?access_token=2.004aXKtCl9RjUBaee2bf2bf02NI1ME
     body:
       encoding: US-ASCII
-      string: status=Hello%206664384
+      string: status=Hello%208952921
     headers:
       Content-Type:
       - application/x-www-form-urlencoded
@@ -19,13 +19,13 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 02 Apr 2012 02:52:47 GMT
+      - Thu, 05 Apr 2012 05:27:42 GMT
       Server:
       - PWS/1.7.3.9
       Transfer-Encoding:
       - chunked
       X-Px:
-      - nc syd-agg-n7 ( sha-agg-n1), nc sha-agg-n1 ( origin)
+      - nc h0-s1007.p0-syd ( sha-agg-n2), nc sha-agg-n2 ( origin)
       Content-Type:
       - application/json;charset=UTF-8
       Age:
@@ -35,17 +35,66 @@ http_interactions:
       Vary:
       - Accept-Encoding
       Api-Server-Ip:
-      - 10.75.24.203
+      - 10.75.0.172
       X-Varnish:
-      - '2717030665'
+      - '2831168139'
       Connection:
       - keep-alive
     body:
       encoding: ASCII-8BIT
-      string: ! '{"created_at":"Mon Apr 02 10:52:46 +0800 2012","id":3430318675892731,"mid":"3430318675892731","idstr":"3430318675892731","text":"Hello
-        6664384","source":"<a href=\"http://open.t.sina.com.cn\" rel=\"nofollow\">未通过审核应用</a>","favorited":false,"truncated":false,"in_reply_to_status_id":"","in_reply_to_user_id":"","in_reply_to_screen_name":"","geo":null,"user":{"id":2647476531,"idstr":"2647476531","screen_name":"stewartmatheson","name":"stewartmatheson","province":"400","city":"7","location":"海外
-        澳大利亚","description":"","url":"","profile_image_url":"http://tp4.sinaimg.cn/2647476531/50/0/1","profile_url":"u/2647476531","domain":"","weihao":"","gender":"m","followers_count":2,"friends_count":11,"statuses_count":9,"favourites_count":0,"created_at":"Mon
-        Mar 05 00:00:00 +0800 2012","following":false,"allow_all_act_msg":false,"geo_enabled":true,"verified":false,"verified_type":-1,"allow_all_comment":true,"avatar_large":"http://tp4.sinaimg.cn/2647476531/180/0/1","verified_reason":"","follow_me":false,"online_status":0,"bi_followers_count":0,"lang":"zh-cn"},"reposts_count":0,"comments_count":0,"mlevel":0,"visible":{"type":0,"list_id":0}}'
+      base64_string: ! 'eyJjcmVhdGVkX2F0IjoiVGh1IEFwciAwNSAxMzoyNzo0MyArMDgwMCAyMDEy
+
+        IiwiaWQiOjM0MzE0NDQ4Mjk0ODgxMDIsIm1pZCI6IjM0MzE0NDQ4Mjk0ODgx
+
+        MDIiLCJpZHN0ciI6IjM0MzE0NDQ4Mjk0ODgxMDIiLCJ0ZXh0IjoiSGVsbG8g
+
+        ODk1MjkyMSIsInNvdXJjZSI6IjxhIGhyZWY9XCJodHRwOi8vb3Blbi50LnNp
+
+        bmEuY29tLmNuXCIgcmVsPVwibm9mb2xsb3dcIj7mnKrpgJrov4flrqHmoLjl
+
+        upTnlKg8L2E+IiwiZmF2b3JpdGVkIjpmYWxzZSwidHJ1bmNhdGVkIjpmYWxz
+
+        ZSwiaW5fcmVwbHlfdG9fc3RhdHVzX2lkIjoiIiwiaW5fcmVwbHlfdG9fdXNl
+
+        cl9pZCI6IiIsImluX3JlcGx5X3RvX3NjcmVlbl9uYW1lIjoiIiwiZ2VvIjpu
+
+        dWxsLCJ1c2VyIjp7ImlkIjoyNjQ3NDc2NTMxLCJpZHN0ciI6IjI2NDc0NzY1
+
+        MzEiLCJzY3JlZW5fbmFtZSI6InN0ZXdhcnRtYXRoZXNvbiIsIm5hbWUiOiJz
+
+        dGV3YXJ0bWF0aGVzb24iLCJwcm92aW5jZSI6IjQwMCIsImNpdHkiOiI3Iiwi
+
+        bG9jYXRpb24iOiLmtbflpJYg5r6z5aSn5Yip5LqaIiwiZGVzY3JpcHRpb24i
+
+        OiIiLCJ1cmwiOiIiLCJwcm9maWxlX2ltYWdlX3VybCI6Imh0dHA6Ly90cDQu
+
+        c2luYWltZy5jbi8yNjQ3NDc2NTMxLzUwLzAvMSIsInByb2ZpbGVfdXJsIjoi
+
+        dS8yNjQ3NDc2NTMxIiwiZG9tYWluIjoiIiwid2VpaGFvIjoiIiwiZ2VuZGVy
+
+        IjoibSIsImZvbGxvd2Vyc19jb3VudCI6MiwiZnJpZW5kc19jb3VudCI6MTEs
+
+        InN0YXR1c2VzX2NvdW50IjoxNSwiZmF2b3VyaXRlc19jb3VudCI6MCwiY3Jl
+
+        YXRlZF9hdCI6Ik1vbiBNYXIgMDUgMDA6MDA6MDAgKzA4MDAgMjAxMiIsImZv
+
+        bGxvd2luZyI6ZmFsc2UsImFsbG93X2FsbF9hY3RfbXNnIjpmYWxzZSwiZ2Vv
+
+        X2VuYWJsZWQiOnRydWUsInZlcmlmaWVkIjpmYWxzZSwidmVyaWZpZWRfdHlw
+
+        ZSI6LTEsImFsbG93X2FsbF9jb21tZW50Ijp0cnVlLCJhdmF0YXJfbGFyZ2Ui
+
+        OiJodHRwOi8vdHA0LnNpbmFpbWcuY24vMjY0NzQ3NjUzMS8xODAvMC8xIiwi
+
+        dmVyaWZpZWRfcmVhc29uIjoiIiwiZm9sbG93X21lIjpmYWxzZSwib25saW5l
+
+        X3N0YXR1cyI6MCwiYmlfZm9sbG93ZXJzX2NvdW50IjowLCJsYW5nIjoiemgt
+
+        Y24ifSwicmVwb3N0c19jb3VudCI6MCwiY29tbWVudHNfY291bnQiOjAsIm1s
+
+        ZXZlbCI6MCwidmlzaWJsZSI6eyJ0eXBlIjowLCJsaXN0X2lkIjowfX0=
+
+'
     http_version: !!null 
-  recorded_at: Mon, 02 Apr 2012 02:52:47 GMT
+  recorded_at: Thu, 05 Apr 2012 05:27:43 GMT
 recorded_with: VCR 2.0.0
