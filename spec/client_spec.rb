@@ -4,10 +4,10 @@ require 'spec_helper'
 
 describe Grizzly::Client do
 
-  let(:access_token) { "2.004aXKtCl9RjUBe463e4c6fc0CzrNu" }
+  let(:access_token) { "2.004aXKtCl9RjUBaee2bf2bf02NI1ME" }
   let(:invalid_access_token) { "icecream" }
   let(:user_id) { 2647476531 }
-  let(:random_seed) { rand(10000000) } 
+  let(:random_seed) { "8952921" } 
   let(:status_update) { "Hello #{random_seed}" }
 
   it "should expect to be passed an access token" do
@@ -18,7 +18,7 @@ describe Grizzly::Client do
     -> {
       VCR.use_cassette('error') do
         client = Grizzly::Client.new(invalid_access_token)
-        client.friends(user_id)
+        client.friends(user_id).first
       end
     }.should raise_error(Grizzly::Errors::WeiboAPI)
   end

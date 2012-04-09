@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Grizzly::Cursor do
-  let(:access_token) { "2.004aXKtCl9RjUBe463e4c6fc0CzrNu" }
+  let(:access_token) { "2.004aXKtCl9RjUBaee2bf2bf02NI1ME" }
   let(:user_id) { "2647476531" }
   let(:popular_user_id) { "1087770692" }
 
@@ -27,5 +27,23 @@ describe Grizzly::Cursor do
       friends = client.friends(popular_user_id)
       friends.next_page { |user| user }
     end
+  end
+
+  it "should be able to get the entire collection of friends" do
+    friends_collection = []
+    total_items = 0
+
+    VCR.use_cassette('paginated_friends_more_than_50', :record => :new_episodes) do
+      client = Grizzly::Client.new(access_token)
+      friends = client.friends(popular_user_id)
+      total_items = friends.total_items
+      while friends.next_page?
+        friends.next_page do |friend|
+          friends_collection << friend 
+        end
+      end
+    end
+    
+    friends_collection.count.should eql total_items
   end
 end
