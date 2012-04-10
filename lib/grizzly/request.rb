@@ -44,7 +44,14 @@ module Grizzly
     private
 
     def response_to_json
-      payload = JSON.parse(@response.body)
+      if @response.body.class == String
+        payload = JSON.parse(@response.body)
+      elsif @response.body.class == Hash
+        payload = @response.body
+      else
+        raise("Unknown Response Type")
+      end
+
       if payload.has_key?("error") && payload.has_key?("error_code")
         raise Grizzly::Errors::WeiboAPI.new(payload["error"], payload["error_code"])
       end
