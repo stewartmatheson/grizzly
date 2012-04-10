@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Grizzly::Cursor do
-  let(:access_token) { "2.004aXKtCl9RjUBaee2bf2bf02NI1ME" }
+  let(:access_token) { "2.004aXKtCl9RjUB964bba3949NaaEgC" }
   let(:user_id) { "2647476531" }
   let(:popular_user_id) { "1087770692" }
 
@@ -10,14 +10,23 @@ describe Grizzly::Cursor do
       client = Grizzly::Client.new(access_token)
       friends = client.friends(popular_user_id)
       friends.next_page?.should eql true
+
+      # increment the page counter by looping though friends
+      friends.each { |friend| friend }
+
+      friends.next_page?.should eql true
     end
   end
   
-  it "should return false on next_page? when there are less than 50 results" do
+  it "should return false on page 2 when there are less than 50 results" do
     VCR.use_cassette('friends') do
       client = Grizzly::Client.new(access_token)
       friends = client.friends(user_id)
-      friends.next_page?.should eql false
+      #friends.next_page?.should eql true
+
+      # increment the page counter by looping though friends
+      friends.each { |friend| friend }
+      friends.next_page?.should == false
     end
   end
 
@@ -25,7 +34,7 @@ describe Grizzly::Cursor do
     VCR.use_cassette('friends_more_than_50', :record => :new_episodes) do
       client = Grizzly::Client.new(access_token)
       friends = client.friends(popular_user_id)
-      friends.next_page { |user| user }
+      friends.each { |user| user }
     end
   end
 
@@ -38,7 +47,7 @@ describe Grizzly::Cursor do
       friends = client.friends(popular_user_id)
       total_items = friends.total_items
       while friends.next_page?
-        friends.next_page do |friend|
+        friends.each do |friend|
           friends_collection << friend 
         end
       end

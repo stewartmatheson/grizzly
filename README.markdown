@@ -83,13 +83,13 @@ end
 ```
 
 For something a little more robust we can iterate over pages as well. This will get all of a users friends iterating
-over them in blocks of fifties. Note that each time you access friends.next_page an new request to the weibo api will be
+over them in blocks of fifties. Note that each time you access friends.each an new request to the weibo api will be
 generated.
 
 ```ruby
 friends = client.friends(user_id)
 while friends.next_page? #Loops untill end of collection
-  friends.next_page do |friend|
+  friends.each do |friend|
     ... # Loops 50 times
   end
 end

@@ -4,10 +4,10 @@ require 'spec_helper'
 
 describe Grizzly::Client do
 
-  let(:access_token) { "2.004aXKtCl9RjUBaee2bf2bf02NI1ME" }
+  let(:access_token) { "2.004aXKtCl9RjUB964bba3949NaaEgC" }
   let(:invalid_access_token) { "icecream" }
   let(:user_id) { 2647476531 }
-  let(:random_seed) { "8952921" } 
+  let(:random_seed) { "3123213213123" } 
   let(:status_update) { "Hello #{random_seed}" }
 
   it "should expect to be passed an access token" do
@@ -44,6 +44,7 @@ describe Grizzly::Client do
       client = Grizzly::Client.new(access_token)
       friends = client.bilateral_friends(user_id)
       friends.count.should eql 1
+      friends[0].id.should eql 1941795265
       friends.first.id.should eql 1941795265
     end
   end
@@ -65,4 +66,21 @@ describe Grizzly::Client do
       status.user.id.should eql user_id
     end
   end
+
+  it "should be able to get the entire collection of bilateral friends" do
+    bilateral_friends_collection = []
+    total_items = 0
+
+    VCR.use_cassette('bilateral_friends', :record => :new_episodes) do
+      client = Grizzly::Client.new(access_token)
+      bilateral_friends = client.bilateral_friends(user_id)
+      while bilateral_friends.next_page?
+        bilateral_friends.each do |friend|
+          bilateral_friends_collection << friend 
+        end
+      end
+      bilateral_friends_collection.count.should eql 1
+    end
+  end
+
 end

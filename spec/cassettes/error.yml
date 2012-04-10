@@ -21,11 +21,11 @@ http_interactions:
       message: Forbidden
     headers:
       Date:
-      - Thu, 05 Apr 2012 05:27:40 GMT
+      - Tue, 10 Apr 2012 02:56:03 GMT
       Server:
       - PWS/1.7.3.9
       X-Px:
-      - nc h0-s1007.p0-syd ( sha-agg-n5), nc sha-agg-n5 ( origin)
+      - nc syd-agg-n6 ( sha-agg-n5), nc sha-agg-n5 ( origin)
       Content-Length:
       - '107'
       Content-Type:
@@ -39,9 +39,9 @@ http_interactions:
       Via:
       - 1.1 varnish
       Api-Server-Ip:
-      - 10.75.24.205
+      - 10.75.24.200
       X-Varnish:
-      - '2831162782'
+      - '904436250'
       Connection:
       - keep-alive
     body:
@@ -54,5 +54,5 @@ http_interactions:
 
 '
     http_version: !!null 
-  recorded_at: Thu, 05 Apr 2012 05:27:41 GMT
+  recorded_at: Tue, 10 Apr 2012 02:56:03 GMT
 recorded_with: VCR 2.0.0

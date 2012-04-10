@@ -11,14 +11,9 @@ module Grizzly
 
     #Each will return the first page of results
     def each(&block)
+      @current_page += 1
       fetch_current_page if !@fetched_current_page
       @items.each { |i| block.call i }  
-    end
-
-    #Next page will return the result set 
-    def next_page(&block)
-      fetch_current_page if !@fetched_current_page
-      @items.each { |i| block.call i }
       @fetched_current_page = false
     end
 
@@ -45,7 +40,6 @@ module Grizzly
     end
 
     def fetch_current_page
-      @current_page += 1
       options = @options.merge({ :page => @current_page, :count => @items_per_page })
       response = page_request(@url, options)
       @total_items = response["total_number"]
