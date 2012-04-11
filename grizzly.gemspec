@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.summary     = "An api wrapper for Weibo V2"
   s.description = "Grizzly makes communicating with Weibo API V2 a breeze by wrapping calls to its api in a neat ruby gem."
  
-  s.required_rubygems_version = ">= 1.8.19"
+  s.required_rubygems_version = ">= 1.8.17"
 
   s.add_development_dependency "rspec"
   s.add_development_dependency "vcr"
