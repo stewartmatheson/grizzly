@@ -34,6 +34,9 @@ module Grizzly
         
         request.body = to_uri_encoded(payload) if payload
       end
+
+    rescue Faraday::Error::TimeoutError
+      throw Grizzly::Errors::Timeout.new 
     end
 
     def response
