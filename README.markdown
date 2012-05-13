@@ -98,6 +98,9 @@ end
 ### Error Handling
 Grizzly has its own set of errors that it can throw. ```Grizzly::Errors::NoAccessToken``` is thrown when the client is created with out an access token. ```Grizzly::Errors::WeiboAPI``` is thrown when ever there is an error returned by an end point of the API. This will return both a message and a weibo error code. ```Grizzly::Errors::Timeout``` will be thrown when the Weibo API is taking too long to respond to a response. There currently is a five second limit on the request time of each request made by Grizzly. Note that when your using a cursor class described above this time out applies to each request the cursor makes not the total time that the cursor takes to build the results of a given GET from the api.
 
+### Pull Requests
+The changes are that what you want to do with the API is not supported. Let me know if that is the case and I will add support for anything you need to do. I will also accept any pull requests with new features included. I did not intend to release this gem full supported with each end point mapped.
+
 ### License
 Copyright (c) 2012 Stewart Matheson
 
