@@ -22,6 +22,8 @@ end
  
 desc "Release to ruby gems"
 task :release => :build do
+  system "git tag -a #{Grizzly::VERSION} -m \"Release tag\""
+  system "git push origin --tags"
   system "gem push grizzly-weibo-#{Grizzly::VERSION}.gem"
   system "rm grizzly-weibo-#{Grizzly::VERSION}.gem"
 end
