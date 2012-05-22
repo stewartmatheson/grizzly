@@ -83,4 +83,16 @@ describe Grizzly::Client do
     end
   end
 
+  it "should timeout if an operation is taking too long" do
+ 
+    VCR.use_cassette('status_update') do
+      Grizzly::Request.should_receive(:new).once.and_raise(Grizzly::Errors::Timeout)
+      -> {
+        client = Grizzly::Client.new(access_token)
+        status = client.status_update(status_update)
+      }.should raise_error(Grizzly::Errors::Timeout)
+
+    end
+  end
+
 end
