@@ -18,5 +18,14 @@ module Grizzly
       request = Grizzly::Request.new(:post, "/statuses/update", { :access_token => @access_token }, { :status => status } )
       Grizzly::Status.new request.response 
     end
+      
+    def statuses(user_id)
+        Grizzly::Cursor.new(Grizzly::Status, "/statuses/user_timeline", {:access_token => @access_token, :uid => user_id})
+        #request = Grizzly::Request.new(:get, "/statuses/user_timeline", {:access_token => @access_token, :uid => user_id})
+        #puts request.response
+        
+        
+    end
+      
   end
 end

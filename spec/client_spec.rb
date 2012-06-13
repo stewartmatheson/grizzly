@@ -4,12 +4,22 @@ require 'spec_helper'
 
 describe Grizzly::Client do
 
-  let(:access_token) { "2.004aXKtCl9RjUB964bba3949NaaEgC" }
+  let(:access_token) { "2.00oO1cSBga_djD08ee03a64cdGaQqB" } 
   let(:invalid_access_token) { "icecream" }
-  let(:user_id) { 2647476531 }
+  let(:user_id) { "1191241142" } 
   let(:random_seed) { "3123213213123" } 
-  let(:status_update) { "Hello #{random_seed}" }
+  let(:status_update) { "Hello #{random_seed}#{Time.now.to_s}" }
 
+    
+    it "should fetch a list of status for a given user" do
+        VCR.use_cassette('status_timeline', :record => :new_episodes) do
+            client = Grizzly::Client.new(access_token)
+            statuses = client.statuses(user_id)
+            statuses.count.should eql 50
+        end
+    end
+
+=begin
   it "should expect to be passed an access token" do
     -> { Grizzly::Client.new }.should raise_error(Grizzly::Errors::NoAccessToken)
   end
@@ -44,8 +54,8 @@ describe Grizzly::Client do
       client = Grizzly::Client.new(access_token)
       friends = client.bilateral_friends(user_id)
       friends.count.should eql 1
-      friends[0].id.should eql 1941795265
-      friends.first.id.should eql 1941795265
+      friends[0].id.should eql 1191241142
+      friends.first.id.should eql 1191241142
     end
   end
 
@@ -54,7 +64,7 @@ describe Grizzly::Client do
       client = Grizzly::Client.new(access_token)
       friends = client.bilateral_friends(user_id)
       friends.first.to_h.class.should eql Hash
-      friends.first.to_h["id"].should eql 1941795265
+      friends.first.to_h["id"].should eql 1191241142
     end
   end
 
@@ -95,4 +105,6 @@ describe Grizzly::Client do
     end
   end
 
+=end 
+ 
 end
