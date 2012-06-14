@@ -1,5 +1,7 @@
 Grizzly
 ===================
+### Attention
+This forked is WIP and for personal experiments, it doesn't follow well along the social coding practices, i.e. some code was commented out for dev purpose,please fork after the owner if needed.
 
 ### About
 Grizzly is a simple API wrapper around the Weibo API V2. The name comes form the awesome Koala gem for facebook.

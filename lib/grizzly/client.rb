@@ -20,11 +20,12 @@ module Grizzly
     end
       
     def statuses(user_id)
-        Grizzly::Cursor.new(Grizzly::Status, "/statuses/user_timeline", {:access_token => @access_token, :uid => user_id})
-        #request = Grizzly::Request.new(:get, "/statuses/user_timeline", {:access_token => @access_token, :uid => user_id})
-        #puts request.response
-        
-        
+        Grizzly::Cursor.new(Grizzly::Status, "/statuses/user_timeline", {:access_token => @access_token, :uid => user_id})        
+    end
+      
+    def user_show(user_id)
+        request = Grizzly::Request.new(:get, "/users/show", { :access_token => @access_token, :uid => user_id} )
+        Grizzly::User.new request.response
     end
       
   end

@@ -4,7 +4,7 @@ module Grizzly
       
     def initialize(data)
       super(data)
-      @data["user"] = Grizzly::User.new(data["user"])
+      @data["user"] = Grizzly::User.new(data["user"]) unless data["user"].nil?
     end
     
   end

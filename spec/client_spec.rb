@@ -4,7 +4,7 @@ require 'spec_helper'
 
 describe Grizzly::Client do
 
-  let(:access_token) { "2.00oO1cSBga_djD08ee03a64cdGaQqB" } 
+  let(:access_token) { "2.00oO1cSBga_djD48e947640ew8nzWB" } 
   let(:invalid_access_token) { "icecream" }
   let(:user_id) { "1191241142" } 
   let(:random_seed) { "3123213213123" } 
@@ -15,7 +15,17 @@ describe Grizzly::Client do
         VCR.use_cassette('status_timeline', :record => :new_episodes) do
             client = Grizzly::Client.new(access_token)
             statuses = client.statuses(user_id)
-            statuses.count.should eql 50
+            statuses.count.should eql 50   # 50: default num of entry in 1st page.
+        end
+    end
+    
+    it "should fetch a valid user info for a given user id" do
+        VCR.use_cassette('user_show', :record => :new_episodes) do
+            client = Grizzly::Client.new(access_token)
+            user = client.user_show(user_id)
+            
+            user.class.should eql Grizzly::User
+            user.id.should eql 1191241142
         end
     end
 
