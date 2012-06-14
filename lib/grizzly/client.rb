@@ -28,5 +28,10 @@ module Grizzly
         Grizzly::User.new request.response
     end
       
+    def user_show_by_screen_name(screen_name)
+        request = Grizzly::Request.new(:get, "/users/show", { :access_token => @access_token, :screen_name => screen_name} )
+        Grizzly::User.new request.response
+    end
+      
   end
 end

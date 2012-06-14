@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.weibo.com/2/friendships/friends.json?access_token=icecream&count=50&page=1&uid=2647476531
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 403
+      message: Forbidden
+    headers:
+      Date:
+      - Tue, 10 Apr 2012 02:56:03 GMT
+      Server:
+      - PWS/1.7.3.9
+      X-Px:
+      - nc syd-agg-n6 ( sha-agg-n5), nc sha-agg-n5 ( origin)
+      Content-Length:
+      - '107'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Encoding:
+      - gzip
+      Vary:
+      - Accept-Encoding
+      Age:
+      - '0'
+      Via:
+      - 1.1 varnish
+      Api-Server-Ip:
+      - 10.75.24.200
+      X-Varnish:
+      - '904436250'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      base64_string: ! 'H4sIAAAAAAAAADTLMQqAMAxA0btkLhbbzcuU0kaMSqJJdRHvriBuHx7/AlQV
+
+        hQGIz7xSTbkUNEtNFmRwH6ciFWEIfYzBgeJ+oLX38cGPSsjVJtrs7242Ybgf
+
+        AQAAAP//AgwAFkpSd1sAAAA=
+
+'
+    http_version: !!null 
+  recorded_at: Tue, 10 Apr 2012 02:56:03 GMT
+recorded_with: VCR 2.0.0
