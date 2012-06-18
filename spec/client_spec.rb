@@ -4,9 +4,10 @@ require 'spec_helper'
 
 describe Grizzly::Client do
 
-  let(:access_token) { "2.00oO1cSBga_djD48e947640ew8nzWB" } 
+  let(:access_token) { "2.00oO1cSBga_djD44f3867e5cQXw5fB" } 
   let(:invalid_access_token) { "icecream" }
   let(:user_id) { "1191241142" } 
+  let(:invalid_user_id) { "1" } 
   let(:random_seed) { "3123213213123" } 
   let(:status_update) { "Hello #{random_seed}#{Time.now.to_s}" }
 
@@ -27,6 +28,15 @@ describe Grizzly::Client do
             user.class.should eql Grizzly::User
             user.id.should eql 1191241142
         end
+    end
+    
+    it "should raise weibo API error when loading for a non-exist user id" do
+      -> {
+        VCR.use_cassette('invalid_id_user_show', :record => :new_episodes) do
+            client = Grizzly::Client.new(access_token)
+            user = client.user_show(invalid_user_id)
+        end
+      }.should raise_error(Grizzly::Errors::WeiboAPI)
     end
 
 =begin
