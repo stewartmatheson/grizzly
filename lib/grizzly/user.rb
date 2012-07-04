@@ -4,11 +4,8 @@ module Grizzly
 
     def initialize(data)
       super(data)
+      @data["status"] = Grizzly::Status.new(data["status"]) unless data["status"].nil?
     end
-
-	#def statuses
-	#	Grizzly::Cursor.new(Grizzly::Status, "/statuses/user_timeline", {:access_token => @access_token, :uid => self.  })
-	#end
-
+      
   end
 end

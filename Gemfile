@@ -1,10 +1,10 @@
-source 'http://rubygems.org'
+source 'http://ruby.taobao.org/'
 
 gem 'rake'
 gem 'vcr'
 gem 'rspec'
 gem 'webmock'
-gem 'yajl'
+#gem 'yajl'
 gem 'active_support'
 
 gem 'faraday', '=0.8.0.rc2'
