@@ -5,11 +5,7 @@ module Grizzly
 
     def initialize(domain_object, url, options, items_per_page = ITEMS_PER_PAGE)
       @domain_object, @url, @options, @items_per_page = domain_object, url, options, items_per_page
-      if ( @domain_object == Grizzly::Comment )
-          @current_page = 1
-      else 
-          @current_page = 0
-      end
+      @current_page = 0
       @fetched_current_page = false
     end
 
@@ -23,13 +19,7 @@ module Grizzly
 
     def next_page?
       total_item_count = total_items
-        
-        if ( @domain_object == Grizzly::Comment )
-            ((@current_page - 1)* @items_per_page) < total_item_count # status comments start from page 1
-        else 
-            (@current_page * @items_per_page) < total_item_count
-        end 
-     
+      (@current_page * @items_per_page) < total_item_count
     end
 
     def total_items

@@ -6,6 +6,6 @@ module Grizzly
       super(data)
       @data["status"] = Grizzly::Status.new(data["status"]) unless data["status"].nil?
     end
-      
+
   end
 end

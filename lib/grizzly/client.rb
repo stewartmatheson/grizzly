@@ -19,23 +19,8 @@ module Grizzly
       Grizzly::Status.new request.response 
     end
       
-    def statuses(user_id)
-        Grizzly::Cursor.new(Grizzly::Status, "/statuses/user_timeline", {:access_token => @access_token, :uid => user_id})        
-    end
-      
-    def user_show(user_id)
-        request = Grizzly::Request.new(:get, "/users/show", { :access_token => @access_token, :uid => user_id} )
-        Grizzly::User.new request.response
-    end
-      
-    def user_show_by_screen_name(screen_name)
-        request = Grizzly::Request.new(:get, "/users/show", { :access_token => @access_token, :screen_name => screen_name} )
-        Grizzly::User.new request.response
-    end
-      
     def comments(status_id)
       Grizzly::Cursor.new(Grizzly::Comment, "/comments/show", {:access_token => @access_token, :id => status_id})
     end
-      
   end
 end
