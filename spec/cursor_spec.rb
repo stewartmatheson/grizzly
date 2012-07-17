@@ -1,12 +1,13 @@
 require 'spec_helper'
 
 describe Grizzly::Cursor do
-  let(:access_token) { "2.004aXKtCl9RjUB964bba3949NaaEgC" }
+    
+  let(:access_token) { "2.00oO1cSBga_djD33ff8552dbGV62dC" }  
   let(:user_id) { "2647476531" }
   let(:popular_user_id) { "1087770692" }
 
   it "should return true on next_page? when there are more than 50 friends" do
-    VCR.use_cassette('friends_more_than_50') do
+    VCR.use_cassette('friends_more_than_50', :record => :new_episodes) do
       client = Grizzly::Client.new(access_token)
       friends = client.friends(popular_user_id)
       friends.next_page?.should eql true
@@ -19,7 +20,7 @@ describe Grizzly::Cursor do
   end
   
   it "should return false on page 2 when there are less than 50 results" do
-    VCR.use_cassette('friends') do
+    VCR.use_cassette('friends', :record => :new_episodes) do
       client = Grizzly::Client.new(access_token)
       friends = client.friends(user_id)
       #friends.next_page?.should eql true

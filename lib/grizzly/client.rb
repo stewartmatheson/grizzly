@@ -18,5 +18,9 @@ module Grizzly
       request = Grizzly::Request.new(:post, "/statuses/update", { :access_token => @access_token }, { :status => status } )
       Grizzly::Status.new request.response 
     end
+      
+    def comments(status_id)
+      Grizzly::Cursor.new(Grizzly::Comment, "/comments/show", {:access_token => @access_token, :id => status_id})
+    end
   end
 end

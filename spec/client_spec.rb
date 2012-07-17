@@ -4,7 +4,7 @@ require 'spec_helper'
 
 describe Grizzly::Client do
 
-  let(:access_token) { "2.004aXKtCl9RjUB964bba3949NaaEgC" }
+  let(:access_token) { "2.00oO1cSBga_djD33ff8552dbGV62dC" }
   let(:invalid_access_token) { "icecream" }
   let(:user_id) { 2647476531 }
   let(:random_seed) { "3123213213123" } 
@@ -31,7 +31,7 @@ describe Grizzly::Client do
   end
 
   it "should make the user data accessable via methods" do
-    VCR.use_cassette('friends') do
+    VCR.use_cassette('friends', :record => :new_episodes) do
       client = Grizzly::Client.new(access_token)
       friends = client.friends(user_id)
       friends.first.id
@@ -40,26 +40,26 @@ describe Grizzly::Client do
   end
 
   it "should be able to fetch bilateral friends" do
-    VCR.use_cassette('bilateral_friends') do
+    VCR.use_cassette('bilateral_friends', :record => :new_episodes) do
       client = Grizzly::Client.new(access_token)
       friends = client.bilateral_friends(user_id)
-      friends.count.should eql 1
-      friends[0].id.should eql 1941795265
-      friends.first.id.should eql 1941795265
+      friends.count.should eql 6
+      friends[0].id.should eql 2709611901
+      friends.first.id.should eql 2709611901
     end
   end
 
   it "should get a hash version of the returned user data" do
-    VCR.use_cassette('bilateral_friends') do
+    VCR.use_cassette('bilateral_friends', :record => :new_episodes) do
       client = Grizzly::Client.new(access_token)
       friends = client.bilateral_friends(user_id)
       friends.first.to_h.class.should eql Hash
-      friends.first.to_h["id"].should eql 1941795265
+      friends.first.to_h["id"].should eql 2709611901
     end
   end
 
   it "should update the current users status" do
-    VCR.use_cassette('status_update') do
+    VCR.use_cassette('status_update', :record => :new_episodes) do
       client = Grizzly::Client.new(access_token)
       status = client.status_update(status_update)
       status.text.should eql status_update
@@ -79,7 +79,7 @@ describe Grizzly::Client do
           bilateral_friends_collection << friend 
         end
       end
-      bilateral_friends_collection.count.should eql 1
+      bilateral_friends_collection.count.should eql 6
     end
   end
 
@@ -92,6 +92,16 @@ describe Grizzly::Client do
         status = client.status_update(status_update)
       }.should raise_error(Grizzly::Errors::Timeout)
 
+    end
+  end
+
+  it "should be able to fetch comments from a status id" do
+    VCR.use_cassette('comments', :record => :new_episodes) do
+      client = Grizzly::Client.new(access_token)
+      comments = client.comments(3456033731517241) # status id
+      comments.count.should eql 1
+      comments[0].id.should eql 3468810822799922  # comment id
+      comments.first.id.should eql 3468810822799922
     end
   end
 
