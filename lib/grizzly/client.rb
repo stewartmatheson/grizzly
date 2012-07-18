@@ -14,7 +14,11 @@ module Grizzly
     end
 
     def status_update(status)
-      raise("Must set a status") unless !status.nil?
+			if status.nil?
+				e = Grizzly::Errors::Arguement.new
+				e.add_error({ :status =>  "You must set a status" })
+				raise e
+			end
       request = Grizzly::Request.new(:post, "/statuses/update", { :access_token => @access_token }, { :status => status } )
       Grizzly::Status.new request.response 
     end
