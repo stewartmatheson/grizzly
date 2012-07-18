@@ -30,6 +30,13 @@ client = Grizzly::Client.new(access_token)
 status = client.status_update("Dude. Weibo is awesome!")
 ```
 
+### Status Comments
+Weibo supports adding comments to status updates. All comments for a status can be fetched in the following way. 
+Note that we pass the id of the status that we are intrested in
+```ruby 
+comments = client.comments(status.id)
+```
+
 Note that all method calls made with Grizzly will always return a domain object. More often than not this domain object
 is a representation of what ever JSON object has been returned by Weibo's API. In this case we get all sorts of handy
 information on the status we just updated including the user that the status belongs to. So you can do...
@@ -100,6 +107,9 @@ Grizzly has its own set of errors that it can throw. ```Grizzly::Errors::NoAcces
 
 ### Pull Requests
 The changes are that what you want to do with the API is not supported. Let me know if that is the case and I will add support for anything you need to do. I will also accept any pull requests with new features included. I did not intend to release this gem full supported with each end point mapped.
+
+### Contributors
+ * realalien (Zhu Jia Cheng)
 
 ### License
 Copyright (c) 2012 Stewart Matheson
