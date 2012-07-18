@@ -3,8 +3,10 @@ module Grizzly
 
     def initialize(data)
       super(data)
-      @data["user"] = Grizzly::User.new(data["user"]) unless data["user"].nil?
     end
     
+    def user
+      return Grizzly::User.new(@data["user"]) unless @data["user"].nil?
+    end
   end
 end

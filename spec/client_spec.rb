@@ -4,12 +4,13 @@ require 'spec_helper'
 
 describe Grizzly::Client do
 
-  let(:access_token) { "2.00oO1cSBga_djD33ff8552dbGV62dC" }
+  let(:access_token) { "2.00oO1cSBga_djD9a565c162e0EVWqE" }
   let(:invalid_access_token) { "icecream" }
   let(:user_id) { 2647476531 }
   let(:random_seed) { "3123213213123" } 
   let(:status_update) { "Hello #{random_seed}" }
-
+  let(:status_update2) { "Changed content" }
+ 
   it "should expect to be passed an access token" do
     -> { Grizzly::Client.new }.should raise_error(Grizzly::Errors::NoAccessToken)
   end
@@ -64,6 +65,11 @@ describe Grizzly::Client do
       status = client.status_update(status_update)
       status.text.should eql status_update
       status.user.id.should eql user_id
+    
+      # return raw data when accessing using .data[hash_key], return object using dot
+      status.user.status.class.should eql Grizzly::Status
+      status.user.status.class.should_not eql Hash
+      status.user.data["status"].class.should eql Hash  
     end
   end
 
@@ -104,5 +110,5 @@ describe Grizzly::Client do
       comments.first.id.should eql 3468810822799922
     end
   end
-
+    
 end
