@@ -4,8 +4,10 @@ module Grizzly
 
     def initialize(data)
       super(data)
-      @data["status"] = Grizzly::Status.new(data["status"]) unless data["status"].nil?
     end
 
+    def status
+      return Grizzly::Status.new(@data["status"]) unless @data["status"].nil?
+    end
   end
 end
