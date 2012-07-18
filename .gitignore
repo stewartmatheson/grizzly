@@ -1,3 +1,4 @@
 *.swp
 faraday.log
 grizzly-weibo-*
+spec/cassettes
