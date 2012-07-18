@@ -9,7 +9,6 @@ describe Grizzly::Client do
   let(:user_id) { 2647476531 }
   let(:random_seed) { "3123213213123" } 
   let(:status_update) { "Hello #{random_seed}" }
-  let(:status_update2) { "Changed content" }
  
   it "should expect to be passed an access token" do
     -> { Grizzly::Client.new }.should raise_error(Grizzly::Errors::NoAccessToken)
