@@ -34,9 +34,9 @@ describe Grizzly::Client do
     VCR.use_cassette('user') do
       client = Grizzly::Client.new(access_token)
       user = client.user(user_id)
-			
-			user.class.should eql Grizzly::User
-			user.name.should eql "stewartmatheson"
+      
+      user.class.should eql Grizzly::User
+      user.name.should eql "stewartmatheson"
     end
   end
 

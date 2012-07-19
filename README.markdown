@@ -28,9 +28,9 @@ method and pass it a single parameter. This is the uid of the user on Weibo. Thi
 with all of the user data.
 ```ruby
 user = client.user(11223344556677)
-user.name							#=> "fredchang"
-user.gender				  	#=> "m"
-user.followers_count	#=> 53
+user.name             #=> "fredchang"
+user.gender           #=> "m"
+user.followers_count  #=> 53
 
 ```
 
