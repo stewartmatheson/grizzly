@@ -22,6 +22,18 @@ using omniauth. There is already a working strategy for Weibo.
 client = Grizzly::Client.new(access_token)
 ```
 
+### Getting User Information
+Once a client object has been created we can use it to download information based on a user id. Just call the user
+method and pass it a single parameter. This is the uid of the user on Weibo. This method will return a user object
+with all of the user data.
+```ruby
+user = client.user(11223344556677)
+user.name							#=> "fredchang"
+user.gender				  	#=> "m"
+user.followers_count	#=> 53
+
+```
+
 ### Updating Status
 First things first. Lets update the users status. This only works after a user has been logged in and has an access token.
 

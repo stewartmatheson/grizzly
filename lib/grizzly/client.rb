@@ -4,6 +4,11 @@ module Grizzly
       raise Grizzly::Errors::NoAccessToken.new unless access_token
       @access_token = access_token
     end
+
+		def user(user_id)
+      request = Grizzly::Request.new(:get, "/users/show", { :access_token => @access_token, :uid => user_id })
+      Grizzly::User.new request.response 
+		end
     
     def friends(user_id)
       Grizzly::Cursor.new(Grizzly::User, "/friendships/friends", {:access_token => @access_token, :uid => user_id})
