@@ -4,11 +4,11 @@ require 'spec_helper'
 
 describe Grizzly::Client do
 
-  let(:access_token) { "2.00oO1cSBga_djD33ff8552dbGV62dC" }
+  let(:access_token) { Settings.access_token }
   let(:invalid_access_token) { "icecream" }
   let(:user_id) { 2647476531 }
   let(:random_seed) { "3123213213123" } 
-  let(:status_update) { "Hello #{random_seed}" }
+  let(:status_update) { -> { "Hello #{random_seed}" }.call }
 
   it "should expect to be passed an access token" do
     -> { Grizzly::Client.new }.should raise_error(Grizzly::Errors::NoAccessToken)

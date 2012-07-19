@@ -22,3 +22,9 @@ VCR.configure do |c|
     !http_message.body.valid_encoding?
   end
 end
+
+require 'settingslogic'
+class Settings < Settingslogic
+  source "#{File.dirname(__FILE__)}/access_token.yml"
+end
+

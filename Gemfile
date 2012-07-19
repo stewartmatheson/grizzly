@@ -7,3 +7,7 @@ gem 'webmock'
 
 gem 'faraday'
 gem 'faraday-stack'
+
+group :deveopement do
+	gem "settingslogic"
+end
