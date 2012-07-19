@@ -10,4 +10,7 @@ gem 'faraday-stack'
 
 group :deveopement do
 	gem "settingslogic"
+	gem "pry"
 end
+
+gem 'simplecov', :require => false, :group => :test
