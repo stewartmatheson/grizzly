@@ -63,12 +63,7 @@ describe Grizzly::Client do
       client = Grizzly::Client.new(access_token)
       status = client.status_update(status_update)
       status.text.should eql status_update
-      status.user.id.should eql user_id
     
-      # return raw data when accessing using .data[hash_key], return object using dot
-      status.user.status.class.should eql Grizzly::Status
-      status.user.status.class.should_not eql Hash
-      status.user.data["status"].class.should eql Hash  
     end
   end
 
