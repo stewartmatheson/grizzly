@@ -9,12 +9,6 @@ desc "Run specs"
   RSpec::Core::RakeTask.new do |t|
 end
 
-desc "Generate code coverage"
-RSpec::Core::RakeTask.new(:coverage) do |t|
-  t.rcov = true
-  t.rcov_opts = ['--exclude', 'spec']
-end
-
 desc "Build the Gem"
 task :build do
   system "gem build grizzly.gemspec"
