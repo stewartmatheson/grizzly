@@ -1,0 +1,6 @@
+# Add your own access token here and copy this file to access_toekn.yml.
+# The tests will then pick up the access token form this file.
+# Don't worry as acess token yml is in the git ignore list
+
+
+access_token : "your token here"
